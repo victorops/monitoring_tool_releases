@@ -1,0 +1,1608 @@
+<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2019-10-01 18:42:32">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description>NOTE: This update set is to only be committed to a ServiceNow Instance that has already committed the Update Set (VictorOps Integration) which was created in 2015. 
+
+This update set will remove/deactivate the Application/Framework of the initial VictorOps Integration. This action should be performed before downloading the new VictorOps application from the ServiceNow Store. </description>
+<inserted/>
+<name>Deprecate Initial VictorOps Integration</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>efcdfbc2dbb37b0065f6572e5e961999</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>5270b9a4dbd080502ffd323b7c96192c</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_e50c6bae0f37f1009b4586bce1050e0f</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;true&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;false&lt;/action_update&gt;&lt;active&gt;false&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;change_fields&gt;false&lt;/change_fields&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;u_victorops_commands&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;true&lt;/execute_function&gt;&lt;filter_condition table="u_victorops_commands"&gt;u_entity_idSTARTSWITHVO_INC^EQ&lt;item endquery="false" field="u_entity_id" goto="false" newquery="false" operator="STARTSWITH" or="false" value="VO_INC"/&gt;&lt;item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/&gt;&lt;/filter_condition&gt;&lt;is_rest&gt;false&lt;/is_rest&gt;&lt;message/&gt;&lt;name&gt;VictorOps Ack-Back&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;rest_method/&gt;&lt;rest_method_text/&gt;&lt;rest_service/&gt;&lt;rest_service_text/&gt;&lt;rest_variables/&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[
+function onAfter(current, previous) {
+	// ackBack(command row, ack state, resolve state, task table)
+	(new VictorOpsHelper()).ackBack(current, 2, 3, 'u_victorops_incidents');
+}
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2015-05-06 18:51:56&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;e50c6bae0f37f1009b4586bce1050e0f&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;VictorOps Ack-Back&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_e50c6bae0f37f1009b4586bce1050e0f&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;jcote&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2019-08-12 22:38:55&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;after&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=e50c6bae0f37f1009b4586bce1050e0f"/&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-953028646</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>1270b9a4dbd080502ffd323b7c96192f</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6ddf70000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_commands</table>
+<target_name>VictorOps Ack-Back</target_name>
+<type>Business Rule</type>
+<update_domain>global</update_domain>
+<update_guid>f11789ecefdfb3c0952c1792ed63e695</update_guid>
+<update_guid_history>f11789ecefdfb3c0952c1792ed63e695:-953028646,f11789ecefdfb3c0952c1792ed63e695:-953028646,9f3541ac89dfb3c0ba06d15bf17520c5:792115621</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_rest_message_fn_parameters_fa5e6fae0f37f1009b4586bce1050e16</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_parameters"><sys_rest_message_fn_parameters action="DELETE"><name>alertURL</name><rest_message_function display_value="post">fcfdabae0f37f1009b4586bce1050e53</rest_message_function><sys_class_name>sys_rest_message_fn_parameters</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 19:00:23</sys_created_on><sys_id>fa5e6fae0f37f1009b4586bce1050e16</sys_id><sys_mod_count>0</sys_mod_count><sys_name>alertURL</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_rest_message_fn_parameters_fa5e6fae0f37f1009b4586bce1050e16</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-05-06 19:00:23</sys_updated_on><type>string</type><value>http://requestb.in/1hqyu4y1</value></sys_rest_message_fn_parameters></record_update>]]></payload>
+<payload_hash>664504022</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>1670b9a4dbd080502ffd323b7c96192e</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de6a0000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table/>
+<target_name>alertURL</target_name>
+<type>Variable Substitutions</type>
+<update_domain>global</update_domain>
+<update_guid>87c88d204e13f3c02d7fd96fa04108ec</update_guid>
+<update_guid_history>87c88d204e13f3c02d7fd96fa04108ec:664504022,87c88d204e13f3c02d7fd96fa04108ec:664504022,0b3541acc6dfb3c0bd0da7f0bba4c4a4:303308162</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_properties_category_m2m_c14a27ae0f37f1009b4586bce1050e36</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties_category_m2m"><sys_properties_category_m2m action="DELETE"><category display_value="VictorOps">f274e76e0f37f1009b4586bce1050ee3</category><order>1</order><property display_value="">102a27ae0f37f1009b4586bce1050e25</property><sys_class_name>sys_properties_category_m2m</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:41:51</sys_created_on><sys_id>c14a27ae0f37f1009b4586bce1050e36</sys_id><sys_mod_count>0</sys_mod_count><sys_name>victorops.orgSlug.VictorOps</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_properties_category_m2m_c14a27ae0f37f1009b4586bce1050e36</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-05-06 18:41:51</sys_updated_on></sys_properties_category_m2m></record_update>]]></payload>
+<payload_hash>-1544048263</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>1a70b9a4dbd080502ffd323b7c96192d</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6ded30000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table/>
+<target_name>victorops.orgSlug.VictorOps</target_name>
+<type>Category Property</type>
+<update_domain>global</update_domain>
+<update_guid>de2a8d608c13f3c052c1e6dbc7605ffa</update_guid>
+<update_guid_history>de2a8d608c13f3c052c1e6dbc7605ffa:-1544048263,de2a8d608c13f3c052c1e6dbc7605ffa:-1544048263,0b3541ac67dfb3c095f044ec7c22df91:1772236759</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_properties_285a27ae0f37f1009b4586bce1050ea9</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties"><sys_properties action="DELETE"><choices/><description>&lt;b&gt;Your VictorOps REST endpoint API key:&lt;/b&gt;</description><ignore_cache>false</ignore_cache><is_private>false</is_private><name>victorops.apiKey</name><read_roles/><suffix/><sys_class_name>sys_properties</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:42:21</sys_created_on><sys_id>285a27ae0f37f1009b4586bce1050ea9</sys_id><sys_mod_count>2</sys_mod_count><sys_name>victorops.apiKey</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_properties_285a27ae0f37f1009b4586bce1050ea9</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-05-07 21:23:45</sys_updated_on><type>string</type><value/><write_roles/></sys_properties><sys_translated_text action="delete_multiple" query="documentkey=285a27ae0f37f1009b4586bce1050ea9"/></record_update>]]></payload>
+<payload_hash>497638986</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>1e70b9a4dbd080502ffd323b7c96192c</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6dee50000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table/>
+<target_name>victorops.apiKey</target_name>
+<type>System Property</type>
+<update_domain>global</update_domain>
+<update_guid>8b2acd604713f3c0d9d67140d05b093c</update_guid>
+<update_guid_history>8b2acd604713f3c0d9d67140d05b093c:497638986,8b2acd604713f3c0d9d67140d05b093c:497638986,873541ac8bdfb3c0b16883486d16278a:-90579634</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_e5de50cb0fb7f1009b4586bce1050e7d</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>false</active><admin_overrides>true</admin_overrides><advanced>false</advanced><condition/><description>Default access control on u_victorops_group_routing</description><name>u_victorops_group_routing</name><operation display_value="write">write</operation><script/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-07 17:10:02</sys_created_on><sys_id>e5de50cb0fb7f1009b4586bce1050e7d</sys_id><sys_mod_count>1</sys_mod_count><sys_name>u_victorops_group_routing</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_security_acl_e5de50cb0fb7f1009b4586bce1050e7d</sys_update_name><sys_updated_by>jcote</sys_updated_by><sys_updated_on>2019-08-12 22:43:29</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>55647675</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>2270b9a4dbd080502ffd323b7c961932</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de2b0000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_group_routing</table>
+<target_name>u_victorops_group_routing</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>e82849eccedfb3c0f011f27fe0caba7c</update_guid>
+<update_guid_history>e82849eccedfb3c0f011f27fe0caba7c:55647675,e82849eccedfb3c0f011f27fe0caba7c:55647675,d73581ac8adfb3c091597be03609052e:-1107333604</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_user_role_288ed08b0fb7f1009b4586bce1050ec0</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role"><sys_user_role action="DELETE"><assignable_by/><can_delegate>true</can_delegate><description/><elevated_privilege>false</elevated_privilege><grantable>true</grantable><includes_roles/><name>u_victorops_group_keys_user</name><scoped_admin>false</scoped_admin><suffix/><sys_class_name>sys_user_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-07 17:08:35</sys_created_on><sys_id>288ed08b0fb7f1009b4586bce1050ec0</sys_id><sys_mod_count>0</sys_mod_count><sys_name>u_victorops_group_keys_user</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_user_role_288ed08b0fb7f1009b4586bce1050ec0</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-05-07 17:08:35</sys_updated_on></sys_user_role></record_update>]]></payload>
+<payload_hash>-1946928653</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>2270b9a4dbd080502ffd323b7c961935</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de900000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table/>
+<target_name>u_victorops_group_keys_user</target_name>
+<type>Role</type>
+<update_domain>global</update_domain>
+<update_guid>9e6985604a13f3c05242c7b51eb30c69</update_guid>
+<update_guid_history>9e6985604a13f3c05242c7b51eb30c69:-1946928653,9e6985604a13f3c05242c7b51eb30c69:-1946928653,273581ac07dfb3c0f4e93295091c40a9:144341069</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_aabc508b0fb7f1009b4586bce1050ec2</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>false</active><admin_overrides>true</admin_overrides><advanced>false</advanced><condition/><description>Default access control on u_victorops_routing_keys</description><name>u_victorops_routing_keys</name><operation display_value="write">write</operation><script/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-07 17:00:48</sys_created_on><sys_id>aabc508b0fb7f1009b4586bce1050ec2</sys_id><sys_mod_count>1</sys_mod_count><sys_name>u_victorops_routing_keys</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_security_acl_aabc508b0fb7f1009b4586bce1050ec2</sys_update_name><sys_updated_by>jcote</sys_updated_by><sys_updated_on>2019-08-12 22:43:31</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>-694324378</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>2670b9a4dbd080502ffd323b7c961931</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de3b0000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_routing_keys</table>
+<target_name>u_victorops_routing_keys</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>4928c520e013f3c053d95c77e99e90c8</update_guid>
+<update_guid_history>4928c520e013f3c053d95c77e99e90c8:-694324378,4928c520e013f3c053d95c77e99e90c8:-694324378,d73581ac8ddfb3c08dc5ce692e906025:-359588619</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_role_b88edc8b0fb7f1009b4586bce1050e80</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="DELETE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-07 17:08:36</sys_created_on><sys_id>b88edc8b0fb7f1009b4586bce1050e80</sys_id><sys_mod_count>0</sys_mod_count><sys_name>u_victorops_group_keys.u_victorops_group_keys_user</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_security_acl display_value="u_victorops_group_keys">ec8edc8b0fb7f1009b4586bce1050e7f</sys_security_acl><sys_update_name>sys_security_acl_role_b88edc8b0fb7f1009b4586bce1050e80</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-05-07 17:08:36</sys_updated_on><sys_user_role display_value="">288ed08b0fb7f1009b4586bce1050ec0</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+<payload_hash>-739056599</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>2670b9a4dbd080502ffd323b7c961934</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de850000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_group_keys</table>
+<target_name>u_victorops_group_keys.u_victorops_group_keys_user</target_name>
+<type>Access Roles</type>
+<update_domain>global</update_domain>
+<update_guid>756985607e13f3c0d7fa3fa776d0e33a</update_guid>
+<update_guid_history>756985607e13f3c0d7fa3fa776d0e33a:-739056599,756985607e13f3c0d7fa3fa776d0e33a:-739056599,e33581ac81dfb3c0792704fb83886367:-552378174</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_6dde50cb0fb7f1009b4586bce1050e7a</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>false</active><admin_overrides>true</admin_overrides><advanced>false</advanced><condition/><description>Default access control on u_victorops_group_routing</description><name>u_victorops_group_routing</name><operation display_value="create">create</operation><script/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-07 17:10:01</sys_created_on><sys_id>6dde50cb0fb7f1009b4586bce1050e7a</sys_id><sys_mod_count>1</sys_mod_count><sys_name>u_victorops_group_routing</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_security_acl_6dde50cb0fb7f1009b4586bce1050e7a</sys_update_name><sys_updated_by>jcote</sys_updated_by><sys_updated_on>2019-08-12 22:43:37</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>134219019</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>2a70b9a4dbd080502ffd323b7c961930</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de4b0000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_group_routing</table>
+<target_name>u_victorops_group_routing</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>3e280920bf13f3c0e238ea98bf2f6b3c</update_guid>
+<update_guid_history>3e280920bf13f3c0e238ea98bf2f6b3c:134219019,3e280920bf13f3c0e238ea98bf2f6b3c:134219019,df3581acd9dfb3c0792e1470d3204e17:-849397972</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_role_45c863ae0f37f1009b4586bce1050e1b</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="DELETE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:35:18</sys_created_on><sys_id>45c863ae0f37f1009b4586bce1050e1b</sys_id><sys_mod_count>0</sys_mod_count><sys_name>u_victorops_incidents.u_victorops_incidents_user</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_security_acl display_value="u_victorops_incidents">89c863ae0f37f1009b4586bce1050e1a</sys_security_acl><sys_update_name>sys_security_acl_role_45c863ae0f37f1009b4586bce1050e1b</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-05-06 18:35:18</sys_updated_on><sys_user_role display_value="">74c823ae0f37f1009b4586bce1050e10</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+<payload_hash>294473052</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>2a70b9a4dbd080502ffd323b7c961933</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6dea00000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_incidents</table>
+<target_name>u_victorops_incidents.u_victorops_incidents_user</target_name>
+<type>Access Roles</type>
+<update_domain>global</update_domain>
+<update_guid>da698560a313f3c0729d98ec4ef62c9e</update_guid>
+<update_guid_history>da698560a313f3c0729d98ec4ef62c9e:294473052,da698560a313f3c0729d98ec4ef62c9e:294473052,ef3581ac51dfb3c0abadb425b9a0754c:-852956671</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_208edc8b0fb7f1009b4586bce1050e7c</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>false</active><admin_overrides>true</admin_overrides><advanced>false</advanced><condition/><description>Default access control on u_victorops_group_keys</description><name>u_victorops_group_keys</name><operation display_value="create">create</operation><script/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-07 17:08:36</sys_created_on><sys_id>208edc8b0fb7f1009b4586bce1050e7c</sys_id><sys_mod_count>1</sys_mod_count><sys_name>u_victorops_group_keys</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_security_acl_208edc8b0fb7f1009b4586bce1050e7c</sys_update_name><sys_updated_by>jcote</sys_updated_by><sys_updated_on>2019-08-12 22:43:39</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>493401693</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>2e70b9a4dbd080502ffd323b7c96192f</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de500000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_group_keys</table>
+<target_name>u_victorops_group_keys</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>8f288dec20dfb3c07caaf8dded176b81</update_guid>
+<update_guid_history>8f288dec20dfb3c07caaf8dded176b81:493401693,8f288dec20dfb3c07caaf8dded176b81:493401693,db3541ac14dfb3c0ffb426e0d2f217d5:773962796</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_role_01576f6e0f37f1009b4586bce1050ebe</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="DELETE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:29:01</sys_created_on><sys_id>01576f6e0f37f1009b4586bce1050ebe</sys_id><sys_mod_count>0</sys_mod_count><sys_name>u_victorops_commands.u_victorops_commands_user</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_security_acl display_value="u_victorops_commands">45576f6e0f37f1009b4586bce1050ebd</sys_security_acl><sys_update_name>sys_security_acl_role_01576f6e0f37f1009b4586bce1050ebe</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-05-06 18:29:01</sys_updated_on><sys_user_role display_value="">a057ab6e0f37f1009b4586bce1050ee1</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+<payload_hash>-700038265</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>2e70b9a4dbd080502ffd323b7c961932</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6deb60000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_commands</table>
+<target_name>u_victorops_commands.u_victorops_commands_user</target_name>
+<type>Access Roles</type>
+<update_domain>global</update_domain>
+<update_guid>da6985602613f3c0597d271a007800c9</update_guid>
+<update_guid_history>da6985602613f3c0597d271a007800c9:-700038265,da6985602613f3c0597d271a007800c9:-700038265,5b3581ac18dfb3c0b225c01f7dc3b63a:-1588455900</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_rest_message_fn_fcfdabae0f37f1009b4586bce1050e53</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn"><sys_rest_message_fn action="INSERT_OR_UPDATE"><authentication_type>inherit_from_parent</authentication_type><basic_auth_password/><basic_auth_profile/><basic_auth_user/><content/><function_name>post</function_name><http_method/><lock>false</lock><oauth2_profile/><protocol_name/><qualified_name>VictorOps Alert Endpoint [ post ]</qualified_name><rest_endpoint>DEPRECATED</rest_endpoint><rest_message display_value="VictorOps Alert Endpoint">d5bdebae0f37f1009b4586bce1050ed0</rest_message><sys_class_name>sys_rest_message_fn</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:57:57</sys_created_on><sys_id>fcfdabae0f37f1009b4586bce1050e53</sys_id><sys_mod_count>2</sys_mod_count><sys_name>post</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_rest_message_fn_fcfdabae0f37f1009b4586bce1050e53</sys_update_name><sys_updated_by>jcote</sys_updated_by><sys_updated_on>2019-08-12 22:46:32</sys_updated_on><use_basic_auth>false</use_basic_auth><use_mid_server/><use_mutual_auth>false</use_mutual_auth></sys_rest_message_fn></record_update>]]></payload>
+<payload_hash>-633748180</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>5270b9a4dbd080502ffd323b7c96192e</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de6f0000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table/>
+<target_name>post</target_name>
+<type>HTTP Method</type>
+<update_domain>global</update_domain>
+<update_guid>55d8cd201313f3c08c1a7c45413ee6eb</update_guid>
+<update_guid_history>55d8cd201313f3c08c1a7c45413ee6eb:-633748180,55d8cd201313f3c08c1a7c45413ee6eb:-633748180,8b3541acf4dfb3c0e8ffceb8a4d471a2:528204090</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_properties_category_m2m_286a27ae0f37f1009b4586bce1050ec1</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties_category_m2m"><sys_properties_category_m2m action="DELETE"><category display_value="VictorOps">f274e76e0f37f1009b4586bce1050ee3</category><order>10</order><property display_value="">285a27ae0f37f1009b4586bce1050ea9</property><sys_class_name>sys_properties_category_m2m</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:42:22</sys_created_on><sys_id>286a27ae0f37f1009b4586bce1050ec1</sys_id><sys_mod_count>1</sys_mod_count><sys_name>victorops.apiKey.VictorOps</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_properties_category_m2m_286a27ae0f37f1009b4586bce1050ec1</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-05-06 18:42:54</sys_updated_on></sys_properties_category_m2m></record_update>]]></payload>
+<payload_hash>958437320</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>5670b9a4dbd080502ffd323b7c96192d</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6dedf0000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table/>
+<target_name>victorops.apiKey.VictorOps</target_name>
+<type>Category Property</type>
+<update_domain>global</update_domain>
+<update_guid>f62acd60a213f3c0a26c3652dc710438</update_guid>
+<update_guid_history>f62acd60a213f3c0a26c3652dc710438:958437320,f62acd60a213f3c0a26c3652dc710438:958437320,033541ac7edfb3c05fcc9d2493cb6490:-1657649898</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_properties_102a27ae0f37f1009b4586bce1050e25</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties"><sys_properties action="DELETE"><choices/><description>&lt;b&gt;Your VictorOps company ID:&lt;/b&gt;</description><ignore_cache>false</ignore_cache><is_private>false</is_private><name>victorops.orgSlug</name><read_roles/><suffix/><sys_class_name>sys_properties</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:41:50</sys_created_on><sys_id>102a27ae0f37f1009b4586bce1050e25</sys_id><sys_mod_count>3</sys_mod_count><sys_name>victorops.orgSlug</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_properties_102a27ae0f37f1009b4586bce1050e25</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-05-07 21:23:17</sys_updated_on><type>string</type><value/><write_roles/></sys_properties><sys_translated_text action="delete_multiple" query="documentkey=102a27ae0f37f1009b4586bce1050e25"/></record_update>]]></payload>
+<payload_hash>-2013104688</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>5a70b9a4dbd080502ffd323b7c96192c</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6ded90000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table/>
+<target_name>victorops.orgSlug</target_name>
+<type>System Property</type>
+<update_domain>global</update_domain>
+<update_guid>b22a8d605113f3c0e09c3f67d54331ff</update_guid>
+<update_guid_history>b22a8d605113f3c0e09c3f67d54331ff:-2013104688,b22a8d605113f3c0e09c3f67d54331ff:-2013104688,873541ac47dfb3c01c5695e427d9eb88:2146742716</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_7face7ae0f37f1009b4586bce1050e7b</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;true&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;true&lt;/action_update&gt;&lt;active&gt;false&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;change_fields&gt;false&lt;/change_fields&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;u_victorops_incidents&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;true&lt;/execute_function&gt;&lt;filter_condition/&gt;&lt;is_rest&gt;false&lt;/is_rest&gt;&lt;message/&gt;&lt;name&gt;VictorOps Incident&lt;/name&gt;&lt;order&gt;10&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;rest_method/&gt;&lt;rest_method_text/&gt;&lt;rest_service/&gt;&lt;rest_service_text/&gt;&lt;rest_variables/&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[
+function onAsync(current) {
+	// openStates, ackStates, criticalPriorities, warningPriorities
+	(new VictorOpsHelper([1],[2],[1,2],[3])).notify(current);
+}
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2015-05-06 18:53:41&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;7face7ae0f37f1009b4586bce1050e7b&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;VictorOps Incident&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_7face7ae0f37f1009b4586bce1050e7b&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;jcote&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2019-08-12 22:38:55&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;async&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=7face7ae0f37f1009b4586bce1050e7b"/&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-1030750106</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>5e70b9a4dbd080502ffd323b7c96192e</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6ddfd0000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_incidents</table>
+<target_name>VictorOps Incident</target_name>
+<type>Business Rule</type>
+<update_domain>global</update_domain>
+<update_guid>311789ec60dfb3c04148858162f7629a</update_guid>
+<update_guid_history>311789ec60dfb3c04148858162f7629a:-1030750106,311789ec60dfb3c04148858162f7629a:-1030750106,d73541acc9dfb3c03dfdd24aa35791b1:1339181320</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_a88edc8b0fb7f1009b4586bce1050e7e</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>false</active><admin_overrides>true</admin_overrides><advanced>false</advanced><condition/><description>Default access control on u_victorops_group_keys</description><name>u_victorops_group_keys</name><operation display_value="write">write</operation><script/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-07 17:08:36</sys_created_on><sys_id>a88edc8b0fb7f1009b4586bce1050e7e</sys_id><sys_mod_count>1</sys_mod_count><sys_name>u_victorops_group_keys</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_security_acl_a88edc8b0fb7f1009b4586bce1050e7e</sys_update_name><sys_updated_by>jcote</sys_updated_by><sys_updated_on>2019-08-12 22:43:31</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>417217197</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>6270b9a4dbd080502ffd323b7c961931</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de310000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_group_keys</table>
+<target_name>u_victorops_group_keys</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>c528c520bb13f3c0f1bdb811d284c7c1</update_guid>
+<update_guid_history>c528c520bb13f3c0f1bdb811d284c7c1:417217197,c528c520bb13f3c0f1bdb811d284c7c1:417217197,d33581ac09dfb3c0c1304ef062499723:428399164</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_role_b4576f6e0f37f1009b4586bce1050ebb</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="DELETE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:29:01</sys_created_on><sys_id>b4576f6e0f37f1009b4586bce1050ebb</sys_id><sys_mod_count>0</sys_mod_count><sys_name>u_victorops_commands.u_victorops_commands_user</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_security_acl display_value="u_victorops_commands">f8576f6e0f37f1009b4586bce1050eba</sys_security_acl><sys_update_name>sys_security_acl_role_b4576f6e0f37f1009b4586bce1050ebb</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-05-06 18:29:01</sys_updated_on><sys_user_role display_value="">a057ab6e0f37f1009b4586bce1050ee1</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+<payload_hash>1968362709</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>6270b9a4dbd080502ffd323b7c961934</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6dec20000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_commands</table>
+<target_name>u_victorops_commands.u_victorops_commands_user</target_name>
+<type>Access Roles</type>
+<update_domain>global</update_domain>
+<update_guid>d26985600513f3c0ccb657486371c5d2</update_guid>
+<update_guid_history>d26985600513f3c0ccb657486371c5d2:1968362709,d26985600513f3c0ccb657486371c5d2:1968362709,ef3581ac4bdfb3c0f2a1b3e1556f4c61:-206383978</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_45576f6e0f37f1009b4586bce1050ebd</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>false</active><admin_overrides>true</admin_overrides><advanced>false</advanced><condition/><description>Default access control on u_victorops_commands</description><name>u_victorops_commands</name><operation display_value="write">write</operation><script/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:29:01</sys_created_on><sys_id>45576f6e0f37f1009b4586bce1050ebd</sys_id><sys_mod_count>1</sys_mod_count><sys_name>u_victorops_commands</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_security_acl_45576f6e0f37f1009b4586bce1050ebd</sys_update_name><sys_updated_by>jcote</sys_updated_by><sys_updated_on>2019-08-12 22:43:31</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>1051194497</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>6670b9a4dbd080502ffd323b7c961930</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de460000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_commands</table>
+<target_name>u_victorops_commands</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>8128c5207813f3c03e0c5ba53d8bd7dc</update_guid>
+<update_guid_history>8128c5207813f3c03e0c5ba53d8bd7dc:1051194497,8128c5207813f3c03e0c5ba53d8bd7dc:1051194497,d33581accbdfb3c00c020df647636e11:1068035664</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_role_45576f6e0f37f1009b4586bce1050ebf</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="DELETE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:29:01</sys_created_on><sys_id>45576f6e0f37f1009b4586bce1050ebf</sys_id><sys_mod_count>0</sys_mod_count><sys_name>u_victorops_commands.u_victorops_commands_user</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_security_acl display_value="u_victorops_commands">89576f6e0f37f1009b4586bce1050ebe</sys_security_acl><sys_update_name>sys_security_acl_role_45576f6e0f37f1009b4586bce1050ebf</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-05-06 18:29:01</sys_updated_on><sys_user_role display_value="">a057ab6e0f37f1009b4586bce1050ee1</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+<payload_hash>1424717960</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>6670b9a4dbd080502ffd323b7c961933</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6debd0000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_commands</table>
+<target_name>u_victorops_commands.u_victorops_commands_user</target_name>
+<type>Access Roles</type>
+<update_domain>global</update_domain>
+<update_guid>de6985604613f3c079d46c6e8e0cadcd</update_guid>
+<update_guid_history>de6985604613f3c079d46c6e8e0cadcd:1424717960,de6985604613f3c079d46c6e8e0cadcd:1424717960,673581ac90dfb3c01eee8e937b7af94a:464631363</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_12bc508b0fb7f1009b4586bce1050ec0</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>false</active><admin_overrides>true</admin_overrides><advanced>false</advanced><condition/><description>Default access control on u_victorops_routing_keys</description><name>u_victorops_routing_keys</name><operation display_value="create">create</operation><script/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-07 17:00:48</sys_created_on><sys_id>12bc508b0fb7f1009b4586bce1050ec0</sys_id><sys_mod_count>1</sys_mod_count><sys_name>u_victorops_routing_keys</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_security_acl_12bc508b0fb7f1009b4586bce1050ec0</sys_update_name><sys_updated_by>jcote</sys_updated_by><sys_updated_on>2019-08-12 22:43:39</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>1191870102</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>6a70b9a4dbd080502ffd323b7c96192f</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de5a0000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_routing_keys</table>
+<target_name>u_victorops_routing_keys</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>df2809204713f3c004035e10b077f24c</update_guid>
+<update_guid_history>df2809204713f3c004035e10b077f24c:1191870102,df2809204713f3c004035e10b077f24c:1191870102,933541ac97dfb3c032ebd6757aed39d3:-55230875</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_f8576f6e0f37f1009b4586bce1050eba</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>false</active><admin_overrides>true</admin_overrides><advanced>false</advanced><condition/><description>Default access control on u_victorops_commands</description><name>u_victorops_commands</name><operation display_value="create">create</operation><script/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:29:01</sys_created_on><sys_id>f8576f6e0f37f1009b4586bce1050eba</sys_id><sys_mod_count>1</sys_mod_count><sys_name>u_victorops_commands</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_security_acl_f8576f6e0f37f1009b4586bce1050eba</sys_update_name><sys_updated_by>jcote</sys_updated_by><sys_updated_on>2019-08-12 22:43:39</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>2037355057</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>6a70b9a4dbd080502ffd323b7c961932</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de650000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_commands</table>
+<target_name>u_victorops_commands</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>532809209113f3c0c27e8f67b18ddb54</update_guid>
+<update_guid_history>532809209113f3c0c27e8f67b18ddb54:2037355057,532809209113f3c0c27e8f67b18ddb54:2037355057,d33581acbedfb3c042839b3d322b7d35:-1225383360</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_user_role_a057ab6e0f37f1009b4586bce1050ee1</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role"><sys_user_role action="DELETE"><assignable_by/><can_delegate>true</can_delegate><description/><elevated_privilege>false</elevated_privilege><grantable>true</grantable><includes_roles/><name>u_victorops_commands_user</name><scoped_admin>false</scoped_admin><suffix/><sys_class_name>sys_user_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:29:00</sys_created_on><sys_id>a057ab6e0f37f1009b4586bce1050ee1</sys_id><sys_mod_count>0</sys_mod_count><sys_name>u_victorops_commands_user</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_user_role_a057ab6e0f37f1009b4586bce1050ee1</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-05-06 18:29:00</sys_updated_on></sys_user_role></record_update>]]></payload>
+<payload_hash>454468851</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>6a70b9a4dbd080502ffd323b7c961935</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6decd0000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table/>
+<target_name>u_victorops_commands_user</target_name>
+<type>Role</type>
+<update_domain>global</update_domain>
+<update_guid>266985603b13f3c033e404df638d63e4</update_guid>
+<update_guid_history>266985603b13f3c033e404df638d63e4:454468851,266985603b13f3c033e404df638d63e4:454468851,7b3581acdcdfb3c083c3e184bfaf84b6:146779085</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_cdc863ae0f37f1009b4586bce1050e1b</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>false</active><admin_overrides>true</admin_overrides><advanced>false</advanced><condition/><description>Default access control on u_victorops_incidents</description><name>u_victorops_incidents</name><operation display_value="write">write</operation><script/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:35:18</sys_created_on><sys_id>cdc863ae0f37f1009b4586bce1050e1b</sys_id><sys_mod_count>1</sys_mod_count><sys_name>u_victorops_incidents</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_security_acl_cdc863ae0f37f1009b4586bce1050e1b</sys_update_name><sys_updated_by>jcote</sys_updated_by><sys_updated_on>2019-08-12 22:43:31</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>-990602016</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>6e70b9a4dbd080502ffd323b7c961931</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de400000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_incidents</table>
+<target_name>u_victorops_incidents</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>4928c5205513f3c0b56940cafedcf8d8</update_guid>
+<update_guid_history>4928c5205513f3c0b56940cafedcf8d8:-990602016,4928c5205513f3c0b56940cafedcf8d8:-990602016,d33581ace7dfb3c02f405094f8aea22c:1622400257</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_role_f8576f6e0f37f1009b4586bce1050ebc</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="DELETE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:29:01</sys_created_on><sys_id>f8576f6e0f37f1009b4586bce1050ebc</sys_id><sys_mod_count>0</sys_mod_count><sys_name>u_victorops_commands.u_victorops_commands_user</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_security_acl display_value="u_victorops_commands">30576f6e0f37f1009b4586bce1050ebc</sys_security_acl><sys_update_name>sys_security_acl_role_f8576f6e0f37f1009b4586bce1050ebc</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-05-06 18:29:01</sys_updated_on><sys_user_role display_value="">a057ab6e0f37f1009b4586bce1050ee1</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+<payload_hash>54846434</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>6e70b9a4dbd080502ffd323b7c961934</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6dec70000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_commands</table>
+<target_name>u_victorops_commands.u_victorops_commands_user</target_name>
+<type>Access Roles</type>
+<update_domain>global</update_domain>
+<update_guid>d66985606b13f3c05a5c0c16970ec2d6</update_guid>
+<update_guid_history>d66985606b13f3c05a5c0c16970ec2d6:54846434,d66985606b13f3c05a5c0c16970ec2d6:54846434,673581ac34dfb3c023e65b24423b9d74:-1941874647</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_properties_category_f274e76e0f37f1009b4586bce1050ee3</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_properties_category"&gt;&lt;sys_properties_category action="DELETE"&gt;&lt;name&gt;VictorOps&lt;/name&gt;&lt;sys_class_name&gt;sys_properties_category&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2015-05-06 18:16:35&lt;/sys_created_on&gt;&lt;sys_id&gt;f274e76e0f37f1009b4586bce1050ee3&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;VictorOps&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_properties_category_f274e76e0f37f1009b4586bce1050ee3&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2015-05-07 21:27:30&lt;/sys_updated_on&gt;&lt;title&gt;&lt;![CDATA[&lt;h2&gt;Application Overview&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;This integration will integrate your ServiceNow instance with your VictorOps account.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Copy your VictorOps company ID and REST API key from your VictorOps administration page and paste them in below.&lt;/p&gt;
+&lt;p&gt;For more information, see the &lt;a title="VictorOps ServiceNow knowledge base article" href="http://victorops.force.com/knowledgebase/articles/Integration/ServiceNow" target="_blank" rel="nofollow"&gt;VictorOps ServiceNow knowledge base article&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Settings&lt;/h2&gt;]]&gt;&lt;/title&gt;&lt;/sys_properties_category&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=f274e76e0f37f1009b4586bce1050ee3"/&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-331609271</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>9270b9a4dbd080502ffd323b7c96192d</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6def60000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table/>
+<target_name>VictorOps</target_name>
+<type>System Property Category</type>
+<update_domain>global</update_domain>
+<update_guid>1aaac9603313f3c08b29fdb04ba4ee68</update_guid>
+<update_guid_history>1aaac9603313f3c08b29fdb04ba4ee68:-331609271,1aaac9603313f3c08b29fdb04ba4ee68:-331609271,073541acb2dfb3c04965feb0cf041e8e:-1443249267</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_app_application_2e74e36e0f37f1009b4586bce1050e5e</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application"><sys_app_application action="INSERT_OR_UPDATE"><active>false</active><category/><description/><device_type>browser</device_type><hint/><name>victorops</name><order/><roles/><sys_class_name>sys_app_application</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:16:34</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>2e74e36e0f37f1009b4586bce1050e5e</sys_id><sys_mod_count>4</sys_mod_count><sys_name>VictorOps</sys_name><sys_overrides/><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_app_application_2e74e36e0f37f1009b4586bce1050e5e</sys_update_name><sys_updated_by>jcote</sys_updated_by><sys_updated_on>2019-10-01 17:42:12</sys_updated_on><title>VictorOps</title><view_name/></sys_app_application></record_update>]]></payload>
+<payload_hash>2121141554</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>9670b9a4dbd080502ffd323b7c96192c</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d886a51ab0000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table/>
+<target_name>VictorOps</target_name>
+<type>Application Menu</type>
+<update_domain>global</update_domain>
+<update_guid>aaa22d2c9890805031364a5fbdf9815d</update_guid>
+<update_guid_history>aaa22d2c9890805031364a5fbdf9815d:2121141554,c9db01e05813f3c0ecddf0f3329ab34c:-1957355417,30ab09a0f313f3c033ddf567208c30fa:822663857,97f649ecb7dfb3c0af5c62704c59a13a:2121141554,ba3541ac24dfb3c0ce921085c7f4160c:-918884818</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_48bc3e640f4006002cf786bce1050e28</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;true&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;false&lt;/action_update&gt;&lt;active&gt;false&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;change_fields&gt;false&lt;/change_fields&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;u_victorops_commands&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;true&lt;/execute_function&gt;&lt;filter_condition/&gt;&lt;is_rest&gt;false&lt;/is_rest&gt;&lt;message/&gt;&lt;name&gt;VictorOps Ack-Back ServiceNow Incident&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;rest_method/&gt;&lt;rest_method_text/&gt;&lt;rest_service/&gt;&lt;rest_service_text/&gt;&lt;rest_variables/&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[function onAfter(current, previous) {
+	// ackBack(command row, ack state, resolve state, task table)
+	(new VictorOpsHelper()).ackBack(current, 2, 6, 'incident');
+}
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2015-05-12 20:31:34&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;48bc3e640f4006002cf786bce1050e28&lt;/sys_id&gt;&lt;sys_mod_count&gt;4&lt;/sys_mod_count&gt;&lt;sys_name&gt;VictorOps Ack-Back ServiceNow Incident&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_48bc3e640f4006002cf786bce1050e28&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;jcote&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2019-08-12 22:38:55&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;after&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=48bc3e640f4006002cf786bce1050e28"/&gt;&lt;/record_update&gt;</payload>
+<payload_hash>499621207</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>9a70b9a4dbd080502ffd323b7c96192e</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6ddf10000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_commands</table>
+<target_name>VictorOps Ack-Back ServiceNow Incident</target_name>
+<type>Business Rule</type>
+<update_domain>global</update_domain>
+<update_guid>391741ecd5dfb3c0cfca584eb4f619ea</update_guid>
+<update_guid_history>391741ecd5dfb3c0cfca584eb4f619ea:499621207,391741ecd5dfb3c0cfca584eb4f619ea:499621207,d73541ac6edfb3c016d3582c5fa6f3ad:267732383</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_rest_message_d5bdebae0f37f1009b4586bce1050ed0</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message"><sys_rest_message action="INSERT_OR_UPDATE"><access>package_private</access><authentication_type>no_authentication</authentication_type><basic_auth_password/><basic_auth_profile/><basic_auth_user/><description>*** DEPRECATED ***&#13;
+NOTE: Download the new bi-directional ServiceNow &gt; VictorOps Integration in the ServiceNow App store. &#13;
+&#13;
+Send an alert to VictorOps</description><name>VictorOps Alert Endpoint</name><oauth2_profile/><protocol_name/><rest_endpoint>https://www.victorops.com</rest_endpoint><sys_class_name>sys_rest_message</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:57:57</sys_created_on><sys_id>d5bdebae0f37f1009b4586bce1050ed0</sys_id><sys_mod_count>3</sys_mod_count><sys_name>VictorOps Alert Endpoint</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_rest_message_d5bdebae0f37f1009b4586bce1050ed0</sys_update_name><sys_updated_by>jcote</sys_updated_by><sys_updated_on>2019-08-12 22:47:15</sys_updated_on><use_basic_auth>false</use_basic_auth><use_mutual_auth>false</use_mutual_auth></sys_rest_message></record_update>]]></payload>
+<payload_hash>-1159044871</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>9e70b9a4dbd080502ffd323b7c96192d</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de750000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table/>
+<target_name>VictorOps Alert Endpoint</target_name>
+<type>REST Message</type>
+<update_domain>global</update_domain>
+<update_guid>b7f88920b713f3c0d24d1763382cfe80</update_guid>
+<update_guid_history>b7f88920b713f3c0d24d1763382cfe80:-1159044871,b7f88920b713f3c0d24d1763382cfe80:-1159044871,eef8cd208213f3c04f4e259d78e0642d:1095918993,64e8c9207c13f3c0edc1244533e9ccf3:2020094317,8b3541ac01dfb3c017d0f7342b2fd694:-1498534797</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_31ec988b0fb7f1009b4586bce1050e29</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>false</active><admin_overrides>true</admin_overrides><advanced>false</advanced><condition/><description>Default access control on u_victorops_api_keys</description><name>u_victorops_api_keys</name><operation display_value="write">write</operation><script/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-07 17:01:35</sys_created_on><sys_id>31ec988b0fb7f1009b4586bce1050e29</sys_id><sys_mod_count>1</sys_mod_count><sys_name>u_victorops_api_keys</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_security_acl_31ec988b0fb7f1009b4586bce1050e29</sys_update_name><sys_updated_by>jcote</sys_updated_by><sys_updated_on>2019-08-12 22:43:31</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>-1815914350</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>a270b9a4dbd080502ffd323b7c961930</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de360000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_api_keys</table>
+<target_name>u_victorops_api_keys</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>0128c520a913f3c0cba62d3e76d023c5</update_guid>
+<update_guid_history>0128c520a913f3c0cba62d3e76d023c5:-1815914350,0128c520a913f3c0cba62d3e76d023c5:-1815914350,df3581aca8dfb3c06fa8bc03e82a1d0e:-2106917983</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_role_208edc8b0fb7f1009b4586bce1050e7e</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="DELETE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-07 17:08:36</sys_created_on><sys_id>208edc8b0fb7f1009b4586bce1050e7e</sys_id><sys_mod_count>0</sys_mod_count><sys_name>u_victorops_group_keys.u_victorops_group_keys_user</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_security_acl display_value="u_victorops_group_keys">648edc8b0fb7f1009b4586bce1050e7d</sys_security_acl><sys_update_name>sys_security_acl_role_208edc8b0fb7f1009b4586bce1050e7e</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-05-07 17:08:36</sys_updated_on><sys_user_role display_value="">288ed08b0fb7f1009b4586bce1050ec0</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+<payload_hash>-1475326649</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>a270b9a4dbd080502ffd323b7c961933</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de7a0000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_group_keys</table>
+<target_name>u_victorops_group_keys.u_victorops_group_keys_user</target_name>
+<type>Access Roles</type>
+<update_domain>global</update_domain>
+<update_guid>3d6985600c13f3c059cb8461e5963c31</update_guid>
+<update_guid_history>3d6985600c13f3c059cb8461e5963c31:-1475326649,3d6985600c13f3c059cb8461e5963c31:-1475326649,e73581ac4cdfb3c0cd3e0e4d05784242:1529819236</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_05c863ae0f37f1009b4586bce1050e1d</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>false</active><admin_overrides>true</admin_overrides><advanced>false</advanced><condition/><description>Default access control on u_victorops_incidents</description><name>u_victorops_incidents</name><operation display_value="delete">delete</operation><script/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:35:18</sys_created_on><sys_id>05c863ae0f37f1009b4586bce1050e1d</sys_id><sys_mod_count>1</sys_mod_count><sys_name>u_victorops_incidents</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_security_acl_05c863ae0f37f1009b4586bce1050e1d</sys_update_name><sys_updated_by>jcote</sys_updated_by><sys_updated_on>2019-08-12 22:41:51</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>1790340622</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>a670b9a4dbd080502ffd323b7c96192f</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de200000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_incidents</table>
+<target_name>u_victorops_incidents</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>78c705206d13f3c007ee45413b081557</update_guid>
+<update_guid_history>78c705206d13f3c007ee45413b081557:1790340622,78c705206d13f3c007ee45413b081557:1790340622,d73541ac53dfb3c06318352f277b27d0:-899785361</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_eebc508b0fb7f1009b4586bce1050ec3</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>false</active><admin_overrides>true</admin_overrides><advanced>false</advanced><condition/><description>Default access control on u_victorops_routing_keys</description><name>u_victorops_routing_keys</name><operation display_value="delete">delete</operation><script/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-07 17:00:48</sys_created_on><sys_id>eebc508b0fb7f1009b4586bce1050ec3</sys_id><sys_mod_count>1</sys_mod_count><sys_name>u_victorops_routing_keys</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_security_acl_eebc508b0fb7f1009b4586bce1050ec3</sys_update_name><sys_updated_by>jcote</sys_updated_by><sys_updated_on>2019-08-12 22:41:51</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>908713976</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>a670b9a4dbd080502ffd323b7c961932</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de1b0000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_routing_keys</table>
+<target_name>u_victorops_routing_keys</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>30c705203113f3c0e546a07ff6b54554</update_guid>
+<update_guid_history>30c705203113f3c0e546a07ff6b54554:908713976,30c705203113f3c0e546a07ff6b54554:908713976,df3581ac72dfb3c01f918e6c5f142b32:-987069881</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_user_role_74c823ae0f37f1009b4586bce1050e10</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role"><sys_user_role action="DELETE"><assignable_by/><can_delegate>true</can_delegate><description/><elevated_privilege>false</elevated_privilege><grantable>true</grantable><includes_roles/><name>u_victorops_incidents_user</name><scoped_admin>false</scoped_admin><suffix/><sys_class_name>sys_user_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:35:18</sys_created_on><sys_id>74c823ae0f37f1009b4586bce1050e10</sys_id><sys_mod_count>0</sys_mod_count><sys_name>u_victorops_incidents_user</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_user_role_74c823ae0f37f1009b4586bce1050e10</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-05-06 18:35:18</sys_updated_on></sys_user_role></record_update>]]></payload>
+<payload_hash>1246497225</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>a670b9a4dbd080502ffd323b7c961935</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6deb10000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table/>
+<target_name>u_victorops_incidents_user</target_name>
+<type>Role</type>
+<update_domain>global</update_domain>
+<update_guid>d26985605213f3c08bfac3f3b0738db5</update_guid>
+<update_guid_history>d26985605213f3c08bfac3f3b0738db5:1246497225,d26985605213f3c08bfac3f3b0738db5:1246497225,f73581ac5adfb3c0208a8ac754e7f7b1:1626107511</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_b5ec988b0fb7f1009b4586bce1050e26</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>false</active><admin_overrides>true</admin_overrides><advanced>false</advanced><condition/><description>Default access control on u_victorops_api_keys</description><name>u_victorops_api_keys</name><operation display_value="create">create</operation><script/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-07 17:01:34</sys_created_on><sys_id>b5ec988b0fb7f1009b4586bce1050e26</sys_id><sys_mod_count>1</sys_mod_count><sys_name>u_victorops_api_keys</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_security_acl_b5ec988b0fb7f1009b4586bce1050e26</sys_update_name><sys_updated_by>jcote</sys_updated_by><sys_updated_on>2019-08-12 22:43:39</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>1532962242</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>aa70b9a4dbd080502ffd323b7c961931</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de550000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_api_keys</table>
+<target_name>u_victorops_api_keys</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>872809202713f3c0481dddace6fdc449</update_guid>
+<update_guid_history>872809202713f3c0481dddace6fdc449:1532962242,872809202713f3c0481dddace6fdc449:1532962242,df3581aceadfb3c0e01b672540306829:1163771665</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_role_e88edc8b0fb7f1009b4586bce1050e7c</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="DELETE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-07 17:08:36</sys_created_on><sys_id>e88edc8b0fb7f1009b4586bce1050e7c</sys_id><sys_mod_count>0</sys_mod_count><sys_name>u_victorops_group_keys.u_victorops_group_keys_user</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_security_acl display_value="u_victorops_group_keys">208edc8b0fb7f1009b4586bce1050e7c</sys_security_acl><sys_update_name>sys_security_acl_role_e88edc8b0fb7f1009b4586bce1050e7c</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-05-07 17:08:36</sys_updated_on><sys_user_role display_value="">288ed08b0fb7f1009b4586bce1050ec0</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+<payload_hash>694884422</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>aa70b9a4dbd080502ffd323b7c961934</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de8b0000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_group_keys</table>
+<target_name>u_victorops_group_keys.u_victorops_group_keys_user</target_name>
+<type>Access Roles</type>
+<update_domain>global</update_domain>
+<update_guid>796985605513f3c035ef26f8ac820b3e</update_guid>
+<update_guid_history>796985605513f3c035ef26f8ac820b3e:694884422,796985605513f3c035ef26f8ac820b3e:694884422,eb3581acb7dfb3c037169e86809a1d71:1475000261</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_89576f6e0f37f1009b4586bce1050ebe</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>false</active><admin_overrides>true</admin_overrides><advanced>false</advanced><condition/><description>Default access control on u_victorops_commands</description><name>u_victorops_commands</name><operation display_value="delete">delete</operation><script/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:29:01</sys_created_on><sys_id>89576f6e0f37f1009b4586bce1050ebe</sys_id><sys_mod_count>1</sys_mod_count><sys_name>u_victorops_commands</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_security_acl_89576f6e0f37f1009b4586bce1050ebe</sys_update_name><sys_updated_by>jcote</sys_updated_by><sys_updated_on>2019-08-12 22:41:51</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>-1817512813</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>ae70b9a4dbd080502ffd323b7c961930</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de260000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_commands</table>
+<target_name>u_victorops_commands</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>b0c70520f513f3c0c5c41e109d60db5b</update_guid>
+<update_guid_history>b0c70520f513f3c0c5c41e109d60db5b:-1817512813,b0c70520f513f3c0c5c41e109d60db5b:-1817512813,d73581acecdfb3c0983999a5bb720e1c:299673378</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_role_89c863ae0f37f1009b4586bce1050e1c</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="DELETE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:35:18</sys_created_on><sys_id>89c863ae0f37f1009b4586bce1050e1c</sys_id><sys_mod_count>0</sys_mod_count><sys_name>u_victorops_incidents.u_victorops_incidents_user</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_security_acl display_value="u_victorops_incidents">cdc863ae0f37f1009b4586bce1050e1b</sys_security_acl><sys_update_name>sys_security_acl_role_89c863ae0f37f1009b4586bce1050e1c</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-05-06 18:35:18</sys_updated_on><sys_user_role display_value="">74c823ae0f37f1009b4586bce1050e10</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+<payload_hash>-1094013123</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>ae70b9a4dbd080502ffd323b7c961933</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6dea50000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_incidents</table>
+<target_name>u_victorops_incidents.u_victorops_incidents_user</target_name>
+<type>Access Roles</type>
+<update_domain>global</update_domain>
+<update_guid>de6985603313f3c04e4c864a8fe179a2</update_guid>
+<update_guid_history>de6985603313f3c04e4c864a8fe179a2:-1094013123,de6985603313f3c04e4c864a8fe179a2:-1094013123,633581ac8bdfb3c0f8be3209c20e975a:25265536</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_include_c374e76e0f37f1009b4586bce1050ee7</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;false&lt;/active&gt;&lt;api_name&gt;global.VictorOpsHelper&lt;/api_name&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description&gt;*** DEPRECATED ***&amp;#13;
+&amp;#13;
+The below library was utilized in the initial ServiceNow VictorOps Integration, which was released and supported by VictorOps. This integration has been upgraded and can be downloaded from the ServiceNow App Store. &amp;#13;
+&amp;#13;
+Main library for the VictorOps application.&lt;/description&gt;&lt;name&gt;VictorOpsHelper&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var VictorOpsHelper = Class.create();
+
+VictorOpsHelper.prototype = {
+	initialize: function(openStates, ackStates, criticalPriorities, warningPriorities) {
+		this.logSource = 'VictorOps';
+		this.verbosity = gs.getProperty('victorops.verbosity', '3');
+		this.apiKey    = gs.getProperty("victorops.apiKey");
+		this.orgSlug   = gs.getProperty("victorops.orgSlug");
+		this.alertURL  = 'https://alert.victorops.com/integrations/generic/20131114/alert';
+		this.cmdPollURL = 'https://alert.victorops.com/monitorCmds?monitorName=&amp;monitorType=30';
+		this.openStates = openStates;
+		this.ackStates = ackStates;
+		this.warningPriorities = warningPriorities;
+		this.criticalPriorities = criticalPriorities;
+	},
+	
+	log: function(msg, level) {
+		if(!level)
+			level=3;
+		if(level &lt;= this.verbosity)
+			gs.log(msg, this.logSource);
+	},
+	
+	getElement: function(current, name) {
+		return current[name].toString();
+	},
+	
+	getJournal: function(j) {
+		return(j.getJournalEntry(-1).split("\n\n"));
+	},
+	
+	latestEntry: function(j) {
+		var entries = this.getJournal(j);
+		for (var i=0; i&lt;entries.length; i++) {
+			var e = entries[i].trim();
+			if (e.length &gt; 0)
+				return e;
+		}
+		return '';
+	},
+	
+	addJournal: function(jsonData, journal, prefix) {
+		var entries = this.getJournal(journal);
+		for (var i=0; i&lt;entries.length; i++) {
+			if (entries[i].trim().length &gt; 0)
+				jsonData["sn." + prefix + "." + i] = entries[i];
+		}
+	},
+	
+	toAlert: function(current, messageType) {
+		var jsonData = {
+			"monitoring_tool": "ServiceNow",
+			"message_type": messageType,
+			"entity_id": this.getElement(current, "number"),
+			"state_message": this.getElement(current, "short_description"),
+			"entity_display_name": "ServiceNow - " + this.getElement(current, "number"),
+	                "sys_id":this.getElement(current, "sys_id"),
+			"ack_msg": this.latestEntry(current.work_notes)
+		};
+		var fields = current.getFields();
+		for (var i = 0; i &lt; fields.size(); i++) {
+			var field = fields.get(i);
+			if (field.hasValue()) {
+				jsonData["sn."+field.getName()] = field.toString();
+			}
+		}
+		this.addJournal(jsonData, current.work_notes, 'work_notes');
+		this.addJournal(jsonData, current.comments, 'comments');
+		return JSON.stringify(jsonData);
+	},
+	
+	contains: function(arr, thing) {
+		var s = parseInt(thing.toString());
+		return (new ArrayUtil()).contains(arr, s);
+	},
+	
+	isOpen: function(state) {
+		return (this.contains(this.openStates, state));
+	},
+	
+	isAcked: function(state) {
+		return (this.contains(this.ackStates,state));
+	},
+	
+	isCritical: function(priority) {
+		return (this.contains(this.criticalPriorities, priority));
+	},
+	
+	isWarning: function(priority) {
+		return (this.contains(this.warningPriorities, priority));
+	},
+	
+	calcType: function(state, priority) {
+		this.log("Warn: " + this.isWarning(priority) + "  Critical: " + this.isCritical(priority) + "  Open: " + this.isOpen(state) + "  Acked: " + this.isAcked(state), 3);
+		
+		if (this.isOpen(state)) {
+			if (this.isCritical(priority)) {
+				messageType = "CRITICAL";
+			} else if (this.isWarning(priority)) {
+				messageType = "WARNING";
+			} else {
+				messageType = "INFO";
+			}
+		} else if (this.isAcked(state)) {
+			messageType = "ACKNOWLEDGEMENT";
+		} else {
+			messageType = "RECOVERY";
+		}
+		return messageType;
+	},
+	
+	groupJoin: function(group, keyTable, joinTable) {
+		var rec = new GlideRecord(keyTable);
+		rec.addJoinQuery(joinTable).addCondition('u_group', group);
+		rec.query();
+		if (rec.next())
+			return rec;
+		return undefined;
+	},
+
+	lookUpRouting: function(current) {
+		var group = current.assignment_group;
+		this.log("Look up routing for " + group, 3);
+		var rec = this.groupJoin(group, 'u_victorops_routing_keys', 'u_victorops_group_routing');
+		if (rec) {
+			this.log(group + " routes to " + rec.u_routing_key, 2);
+			return rec.u_routing_key.toString();
+		}
+		return undefined;
+	},
+	
+	lookUpAPIKey: function(current) {
+		var group = current.assignment_group;
+		this.log("Look up API key for " + group, 3);
+		var rec = this.groupJoin(group, 'u_victorops_api_keys', 'u_victorops_group_keys');
+		if (rec) {
+			this.log(group + " uses api key " + rec.u_api_key, 2);
+			return rec.u_api_key.toString();
+		}
+		return undefined;
+	},
+	
+	buildURL: function(apiKey, routingKey) {
+		var k = this.apiKey;
+		if (apiKey)
+			k = apiKey;
+		var u = this.alertURL + "/" + k;
+		if (routingKey)
+			u = u + "/" + routingKey;
+		return u;
+	},
+	
+	notify: function(current,  messageType) {
+		try {
+			if ( !messageType )
+				messageType = this.calcType(current.state, current.priority);
+			
+			var url = this.buildURL(this.lookUpAPIKey(current), this.lookUpRouting(current));
+			
+			this.log("Notifying for " + current.number + ": " + url, 2);
+			this.log(this.toAlert(current), 3);
+			var r = new sn_ws.RESTMessageV2('VictorOps alert endpoint', 'post');
+			r.setStringParameter('alertURL', url);
+			r.setRequestBody(this.toAlert(current, messageType));
+			
+			this.log("Sending alert to " + this.alertURL, 3);
+			var response = r.execute();
+			var responseBody = response.getBody();
+			var httpStatus = response.getStatusCode();
+			this.log(current.number + " notification response code: " + httpStatus, 1);
+		}
+		catch(e) {
+			this.log(current.number + " error notifying: " + e, 1);
+		}
+	},
+	
+	ackBack: function(current, ackState, recoveryState, table) {
+		try {
+			var entity_id = current.u_entity_id;
+			var alert_type = current.u_alert_type;
+			var note = current.u_author + ': ' + current.u_message;
+			
+			var newState = ackState;
+			if (alert_type == "RECOVERY")
+				newState = recoveryState;
+			
+			this.log('Executing VictorOps ack-back: ' + entity_id + ': ' + alert_type, 1);
+			
+			var gr = new GlideRecord(table);
+			gr.addQuery('number', entity_id);
+			gr.query();
+			while (gr.next()) {
+				this.log('Updating incident state ' + gr.number + ' to ' + newState, 3);
+				gr.state = newState;
+				gr.work_notes = gr.work_notes + note + '\n\n';
+				gr.update();
+			}
+		} catch (ex) {
+			this.log('Failed ack-back: ' + ex, 1);
+		}
+	},
+	
+	pollForCommands: function(org, key) {
+		try {
+			if (!org)
+				org = this.orgSlug;
+			if (!key)
+				key = this.apiKey;
+			var url = this.cmdPollURL + '&amp;orgSlug='+org+'&amp;orgKey='+key;
+			
+			this.log('Polling for commands at ' + url, 3);
+			
+			var httpclient = Packages.org.apache.commons.httpclient;
+			var client     = new httpclient.HttpClient();
+			var get        = new httpclient.methods.GetMethod(url);
+			var status     = client.executeMethod(get);
+			if (status != 200) {
+				throw 'Error status from server: ' + status;
+			}
+			var resp = get.getResponseBodyAsString();
+			var cmds = (new JSONParser()).parse(resp);
+			this.log('Command poll result: ' + resp, 3);
+			this.log('Got ' + (cmds.length-1) + ' commands from VictorOps', 3);
+			for (var i=0; i&lt;cmds.length; i++) {
+				c = cmds[i];
+				if (c.entity_id) {
+					this.log('Got command for ' + c.entity_id + ': ' + c.alert_type, 2);
+					var gr = new GlideRecord('u_victorops_commands');
+					gr.initialize();
+					gr.u_entity_id     = c.entity_id;
+					gr.u_alert_type    = c.alert_type;
+					gr.u_author        = c.ack_author;
+					gr.u_message       = c.ack_msg;
+					gr.insert();
+				}
+			}
+		} catch (ex) {
+			this.log('Error polling for acks/resolves: ' + ex, 1);
+		}
+	},
+	
+	type: 'VictorOps'
+};]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2015-05-06 18:16:37&lt;/sys_created_on&gt;&lt;sys_id&gt;c374e76e0f37f1009b4586bce1050ee7&lt;/sys_id&gt;&lt;sys_mod_count&gt;24&lt;/sys_mod_count&gt;&lt;sys_name&gt;VictorOpsHelper&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_c374e76e0f37f1009b4586bce1050ee7&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;jcote&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2019-08-12 22:40:37&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+<payload_hash>1956031025</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>d270b9a4dbd080502ffd323b7c96192f</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de030000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table/>
+<target_name>VictorOpsHelper</target_name>
+<type>Script Include</type>
+<update_domain>global</update_domain>
+<update_guid>227789ecc5dfb3c0428c95cf00c4293b</update_guid>
+<update_guid_history>227789ecc5dfb3c0428c95cf00c4293b:1956031025,227789ecc5dfb3c0428c95cf00c4293b:1956031025,5b3541ace8dfb3c00f13e9a02aeb1acd:-535286022</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_3f2dfe640f4006002cf786bce1050e62</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;true&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;false&lt;/action_update&gt;&lt;active&gt;false&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;change_fields&gt;false&lt;/change_fields&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;u_victorops_commands&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;true&lt;/execute_function&gt;&lt;filter_condition/&gt;&lt;is_rest&gt;false&lt;/is_rest&gt;&lt;message/&gt;&lt;name&gt;VictorOps Ack-Back ServiceNow Problem&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;rest_method/&gt;&lt;rest_method_text/&gt;&lt;rest_service/&gt;&lt;rest_service_text/&gt;&lt;rest_variables/&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[function onAfter(current, previous) {
+	// ackBack(command row, ack state, resolve state, task table)
+	(new VictorOpsHelper()).ackBack(current, 2, 4, 'problem');
+}
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2015-05-12 20:33:47&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;3f2dfe640f4006002cf786bce1050e62&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;VictorOps Ack-Back ServiceNow Problem&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_3f2dfe640f4006002cf786bce1050e62&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;jcote&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2019-08-12 22:38:52&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;after&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=3f2dfe640f4006002cf786bce1050e62"/&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-228647684</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>d670b9a4dbd080502ffd323b7c96192e</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6ddea0000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_commands</table>
+<target_name>VictorOps Ack-Back ServiceNow Problem</target_name>
+<type>Business Rule</type>
+<update_domain>global</update_domain>
+<update_guid>811749ac02dfb3c0ef49598d67dd6148</update_guid>
+<update_guid_history>811749ac02dfb3c0ef49598d67dd6148:-228647684,811749ac02dfb3c0ef49598d67dd6148:-228647684,c73541ac96dfb3c04c07d598a7e3baa9:-16774072</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_properties_category_m2m_c774e76e0f37f1009b4586bce1050ee6</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties_category_m2m"><sys_properties_category_m2m action="DELETE"><category display_value="VictorOps">f274e76e0f37f1009b4586bce1050ee3</category><order>100</order><property display_value="">7a74e76e0f37f1009b4586bce1050ee3</property><sys_class_name>sys_properties_category_m2m</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:16:36</sys_created_on><sys_id>c774e76e0f37f1009b4586bce1050ee6</sys_id><sys_mod_count>1</sys_mod_count><sys_name>victorops.verbosity.VictorOps</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_properties_category_m2m_c774e76e0f37f1009b4586bce1050ee6</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-05-06 18:42:59</sys_updated_on></sys_properties_category_m2m></record_update>]]></payload>
+<payload_hash>-2095483375</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>da70b9a4dbd080502ffd323b7c96192d</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6deeb0000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table/>
+<target_name>victorops.verbosity.VictorOps</target_name>
+<type>Category Property</type>
+<update_domain>global</update_domain>
+<update_guid>d72acd604513f3c0b3240ee45146bb6b</update_guid>
+<update_guid_history>d72acd604513f3c0b3240ee45146bb6b:-2095483375,d72acd604513f3c0b3240ee45146bb6b:-2095483375,033541aca6dfb3c0286785f967948793:1181270511</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_properties_7a74e76e0f37f1009b4586bce1050ee3</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties"><sys_properties action="DELETE"><choices>1,2,3</choices><description>&lt;b&gt;Log Verbosity Level&lt;/b&gt;&lt;br/&gt;
+1 (Low Verbosity) - Warning and possible Error condition statements&lt;br/&gt;
+2 (Medium Verbosity) - Informational statements listing general operations of the integration&lt;br/&gt;
+3 (High Verbosity) - Variable values, comparison tests, etc.</description><ignore_cache>false</ignore_cache><is_private>false</is_private><name>victorops.verbosity</name><read_roles/><suffix/><sys_class_name>sys_properties</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:16:35</sys_created_on><sys_id>7a74e76e0f37f1009b4586bce1050ee3</sys_id><sys_mod_count>1</sys_mod_count><sys_name>victorops.verbosity</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_properties_7a74e76e0f37f1009b4586bce1050ee3</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-05-12 21:10:43</sys_updated_on><type>choicelist</type><value>1</value><write_roles/></sys_properties><sys_translated_text action="delete_multiple" query="documentkey=7a74e76e0f37f1009b4586bce1050ee3"/></record_update>]]></payload>
+<payload_hash>-2055450025</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>de70b9a4dbd080502ffd323b7c96192c</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6def10000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table/>
+<target_name>victorops.verbosity</target_name>
+<type>System Property</type>
+<update_domain>global</update_domain>
+<update_guid>ab2acd607d13f3c0912cd5300b480f6f</update_guid>
+<update_guid_history>ab2acd607d13f3c0912cd5300b480f6f:-2055450025,ab2acd607d13f3c0912cd5300b480f6f:-2055450025,873541ac8ddfb3c07b5fc944f2c1798c:-607205349</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_ec8edc8b0fb7f1009b4586bce1050e7f</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>false</active><admin_overrides>true</admin_overrides><advanced>false</advanced><condition/><description>Default access control on u_victorops_group_keys</description><name>u_victorops_group_keys</name><operation display_value="delete">delete</operation><script/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-07 17:08:36</sys_created_on><sys_id>ec8edc8b0fb7f1009b4586bce1050e7f</sys_id><sys_mod_count>1</sys_mod_count><sys_name>u_victorops_group_keys</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_security_acl_ec8edc8b0fb7f1009b4586bce1050e7f</sys_update_name><sys_updated_by>jcote</sys_updated_by><sys_updated_on>2019-08-12 22:41:51</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>-1772812225</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>e270b9a4dbd080502ffd323b7c961932</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de100000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_group_keys</table>
+<target_name>u_victorops_group_keys</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>bcc705207e13f3c097722d89bf29404c</update_guid>
+<update_guid_history>bcc705207e13f3c097722d89bf29404c:-1772812225,bcc705207e13f3c097722d89bf29404c:-1772812225,db3581ace9dfb3c02e6455286f5fb830:1769640078</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_user_role_3e74e76e0f37f1009b4586bce1050ee2</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role"><sys_user_role action="DELETE"><assignable_by/><can_delegate>true</can_delegate><description>Admin for the VictorOps Integration Application</description><elevated_privilege>false</elevated_privilege><grantable>true</grantable><includes_roles/><name>VictorOpsAdmin</name><scoped_admin>false</scoped_admin><suffix/><sys_class_name>sys_user_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:16:35</sys_created_on><sys_id>3e74e76e0f37f1009b4586bce1050ee2</sys_id><sys_mod_count>0</sys_mod_count><sys_name>VictorOpsAdmin</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_user_role_3e74e76e0f37f1009b4586bce1050ee2</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-05-06 18:16:35</sys_updated_on></sys_user_role></record_update>]]></payload>
+<payload_hash>-100931197</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>e270b9a4dbd080502ffd323b7c961935</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de950000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table/>
+<target_name>VictorOpsAdmin</target_name>
+<type>Role</type>
+<update_domain>global</update_domain>
+<update_guid>de6985603d13f3c0ffa298c53a4ac785</update_guid>
+<update_guid_history>de6985603d13f3c0ffa298c53a4ac785:-100931197,de6985603d13f3c0ffa298c53a4ac785:-100931197,773581acdfdfb3c0d7ec8a906e5effac:-1181737231</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_b0c823ae0f37f1009b4586bce1050e14</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>false</active><admin_overrides>true</admin_overrides><advanced>false</advanced><condition/><description>Default access control on u_victorops_incidents</description><name>u_victorops_incidents</name><operation display_value="create">create</operation><script/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:35:18</sys_created_on><sys_id>b0c823ae0f37f1009b4586bce1050e14</sys_id><sys_mod_count>1</sys_mod_count><sys_name>u_victorops_incidents</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_security_acl_b0c823ae0f37f1009b4586bce1050e14</sys_update_name><sys_updated_by>jcote</sys_updated_by><sys_updated_on>2019-08-12 22:43:39</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>1032160304</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>e670b9a4dbd080502ffd323b7c961931</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de5f0000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_incidents</table>
+<target_name>u_victorops_incidents</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>1b280920a813f3c0fbdfb5fab0ce8650</update_guid>
+<update_guid_history>1b280920a813f3c0fbdfb5fab0ce8650:1032160304,1b280920a813f3c0fbdfb5fab0ce8650:1032160304,db3581ac27dfb3c0abfffc32a6cd0a27:-931903983</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_role_cdc863ae0f37f1009b4586bce1050e1d</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="DELETE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:35:18</sys_created_on><sys_id>cdc863ae0f37f1009b4586bce1050e1d</sys_id><sys_mod_count>0</sys_mod_count><sys_name>u_victorops_incidents.u_victorops_incidents_user</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_security_acl display_value="u_victorops_incidents">05c863ae0f37f1009b4586bce1050e1d</sys_security_acl><sys_update_name>sys_security_acl_role_cdc863ae0f37f1009b4586bce1050e1d</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-05-06 18:35:18</sys_updated_on><sys_user_role display_value="">74c823ae0f37f1009b4586bce1050e10</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+<payload_hash>-1287127837</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>e670b9a4dbd080502ffd323b7c961934</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6deaa0000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_incidents</table>
+<target_name>u_victorops_incidents.u_victorops_incidents_user</target_name>
+<type>Access Roles</type>
+<update_domain>global</update_domain>
+<update_guid>d2698560ee13f3c018d200ad82c591a7</update_guid>
+<update_guid_history>d2698560ee13f3c018d200ad82c591a7:-1287127837,d2698560ee13f3c018d200ad82c591a7:-1287127837,6f3581ac0ddfb3c0e0c9457c6f99da69:-2115867622</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_75ec988b0fb7f1009b4586bce1050e2a</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>false</active><admin_overrides>true</admin_overrides><advanced>false</advanced><condition/><description>Default access control on u_victorops_api_keys</description><name>u_victorops_api_keys</name><operation display_value="delete">delete</operation><script/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-07 17:01:35</sys_created_on><sys_id>75ec988b0fb7f1009b4586bce1050e2a</sys_id><sys_mod_count>1</sys_mod_count><sys_name>u_victorops_api_keys</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_security_acl_75ec988b0fb7f1009b4586bce1050e2a</sys_update_name><sys_updated_by>jcote</sys_updated_by><sys_updated_on>2019-08-12 22:41:51</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>1973061668</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>ea70b9a4dbd080502ffd323b7c961930</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de150000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_api_keys</table>
+<target_name>u_victorops_api_keys</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>f4c705208513f3c091da7c5b951dfc50</update_guid>
+<update_guid_history>f4c705208513f3c091da7c5b951dfc50:1973061668,f4c705208513f3c091da7c5b951dfc50:1973061668,d33581ac4ddfb3c0f50d6e44cba5f71a:-1606138893</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_role_648edc8b0fb7f1009b4586bce1050e7f</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="DELETE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-07 17:08:36</sys_created_on><sys_id>648edc8b0fb7f1009b4586bce1050e7f</sys_id><sys_mod_count>0</sys_mod_count><sys_name>u_victorops_group_keys.u_victorops_group_keys_user</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_security_acl display_value="u_victorops_group_keys">a88edc8b0fb7f1009b4586bce1050e7e</sys_security_acl><sys_update_name>sys_security_acl_role_648edc8b0fb7f1009b4586bce1050e7f</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-05-07 17:08:36</sys_updated_on><sys_user_role display_value="">288ed08b0fb7f1009b4586bce1050ec0</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+<payload_hash>-1143411263</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>ea70b9a4dbd080502ffd323b7c961933</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de800000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_group_keys</table>
+<target_name>u_victorops_group_keys.u_victorops_group_keys_user</target_name>
+<type>Access Roles</type>
+<update_domain>global</update_domain>
+<update_guid>716985600713f3c000556ae69ba78c36</update_guid>
+<update_guid_history>716985600713f3c000556ae69ba78c36:-1143411263,716985600713f3c000556ae69ba78c36:-1143411263,6b3581ac09dfb3c0a41230f4b8521a4f:-404484566</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_2dde50cb0fb7f1009b4586bce1050e7e</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>false</active><admin_overrides>true</admin_overrides><advanced>false</advanced><condition/><description>Default access control on u_victorops_group_routing</description><name>u_victorops_group_routing</name><operation display_value="delete">delete</operation><script/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-07 17:10:02</sys_created_on><sys_id>2dde50cb0fb7f1009b4586bce1050e7e</sys_id><sys_mod_count>1</sys_mod_count><sys_name>u_victorops_group_routing</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_security_acl_2dde50cb0fb7f1009b4586bce1050e7e</sys_update_name><sys_updated_by>jcote</sys_updated_by><sys_updated_on>2019-08-12 22:41:49</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>-53686295</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>ee70b9a4dbd080502ffd323b7c96192f</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de0a0000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_group_routing</table>
+<target_name>u_victorops_group_routing</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>d8c78120c613f3c0f4234b70329fa1c9</update_guid>
+<update_guid_history>d8c78120c613f3c0f4234b70329fa1c9:-53686295,d8c78120c613f3c0f4234b70329fa1c9:-53686295,173541acc1dfb3c063e5d1119f29c6d8:328363914</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_role_01c863ae0f37f1009b4586bce1050e1a</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="DELETE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-06 18:35:18</sys_created_on><sys_id>01c863ae0f37f1009b4586bce1050e1a</sys_id><sys_mod_count>0</sys_mod_count><sys_name>u_victorops_incidents.u_victorops_incidents_user</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_security_acl display_value="u_victorops_incidents">b0c823ae0f37f1009b4586bce1050e14</sys_security_acl><sys_update_name>sys_security_acl_role_01c863ae0f37f1009b4586bce1050e1a</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2015-05-06 18:35:18</sys_updated_on><sys_user_role display_value="">74c823ae0f37f1009b4586bce1050e10</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+<payload_hash>-151666176</payload_hash>
+<remote_update_set display_value="Deprecate Initial VictorOps Integration">5270b9a4dbd080502ffd323b7c96192c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jcote</sys_created_by>
+<sys_created_on>2019-10-01 18:42:32</sys_created_on>
+<sys_id>ee70b9a4dbd080502ffd323b7c961932</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16d22d6de9a0000001</sys_recorded_at>
+<sys_updated_by>jcote</sys_updated_by>
+<sys_updated_on>2019-10-01 18:42:32</sys_updated_on>
+<table>u_victorops_incidents</table>
+<target_name>u_victorops_incidents.u_victorops_incidents_user</target_name>
+<type>Access Roles</type>
+<update_domain>global</update_domain>
+<update_guid>126985601913f3c0ef867e9cf59d368e</update_guid>
+<update_guid_history>126985601913f3c0ef867e9cf59d368e:-151666176,126985601913f3c0ef867e9cf59d368e:-151666176,d33581acb1dfb3c098001da031e5143d:-1779206435</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
