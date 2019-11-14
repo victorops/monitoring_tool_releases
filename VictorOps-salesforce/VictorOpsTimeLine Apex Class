@@ -1,0 +1,61 @@
+public class VictorOpsTimeLine{
+    public static boolean isApexTest = false;
+    public static boolean caseIsClosed = true;
+ @future(callout=true)
+     public static void caseToVictor(boolean isRecovery, String casenumber, String subject, String name, String company,String description, String reason, String email){
+         String AtMessage='from: ';
+         String IssueMessage=', Case Subject: ';
+         String critical='critical';
+         String recovery='recovery';
+         String message='New SalesForce Case '+AtMessage + ifnull(name,email) + IssueMessage + ifnull(reason,subject);
+ HttpRequest req = new HttpRequest();
+ Http http = new Http();
+         
+ req.setEndpoint('http://alert.victorops.com/integrations/generic/20131114/alert/$YOUR_API_KEY_HERE/$ROUTING_KEY_HERE');
+ req.setMethod('POST');
+ Map<String, String> data = new Map<String, String>();
+ data.put('message_type', ifRecover(isRecovery, recovery,critical));
+ data.put('entity_id', casenumber);
+ data.put('entity_display_name', 'SalesForce Case Number: ' +casenumber);
+ data.put('monitoring_tool', 'SalesForce');
+ data.put('state_message', message);
+ data.put('Subject', subject);
+ data.put('Contact_Name ', name);
+ data.put('Company_Name', company);
+ data.put('Case_Desctiption', description);
+ data.put('Case_Reason', reason);
+ data.put('Contact_Email', email);       
+    
+ String body = JSON.serialize(data);
+ System.debug(body);
+ req.setBody(body);
+ req.setHeader('Content-Type','application/json');
+
+ // Create a new http object to send the request object 
+
+ // A response object is generated as a result of the request   
+
+          
+         
+         if (!isApexTest){
+ HTTPResponse res = http.send(req);
+ System.debug(res.getBody());
+  }
+     }
+
+    private static String ifnull(String maybeValue, String defaultValue) {
+        if(maybeValue != null) {
+           return maybeValue;
+         } else {
+             return defaultValue;
+         }
+                   
+    }
+     private static String ifRecover(boolean isRecovery, String recovery, string critical){
+         if (isRecovery){
+             return recovery;
+         } else{
+             return critical;
+         }
+     }  
+}

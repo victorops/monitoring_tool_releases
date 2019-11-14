@@ -1,0 +1,9 @@
+trigger resolveCaseVO on Case (after update) {
+    for (Case c: Trigger.new) {
+        if (c.Status == 'Closed'){
+        	
+            VictorOpsTimeLine.caseToVictor(true, c.CaseNumber , c.Subject, c.SuppliedName, c.SuppliedCompany, c.Description, c.Reason, c.SuppliedEmail);
+        }    
+        
+    }
+}

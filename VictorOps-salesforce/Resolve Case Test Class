@@ -1,0 +1,19 @@
+@isTest
+private class resolveCaseVOTEST{
+    static testMethod void  createCase_test(){
+     //make a case//
+        Case caseOpened= new Case(Status='new');
+        insert caseOpened;
+     //convert case status to closed to fire trigger//
+        Test.startTest();
+        update(caseOpened);
+        caseOpened.Status='Closed';
+        VictorOpsTimeLine.isApexTest=true;
+        boolean isDone=false;
+        VictorOpsTimeLine.caseToVictor(true,'casenumber','test subject','test name','test company', 'test desc', 'test reason', 'test email');
+        isDone=true;
+        System.assertEquals(True, isDone);
+       	Test.stopTest();
+        
+    }
+}

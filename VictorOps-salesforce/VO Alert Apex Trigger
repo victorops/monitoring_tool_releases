@@ -1,0 +1,6 @@
+trigger voAlert on Case (after insert) {
+    for (Case c: Trigger.new) {     
+        VictorOpsTimeLine.caseToVictor(false, c.CaseNumber , c.Subject, c.SuppliedName, c.SuppliedCompany, c.Description, c.Reason, c.SuppliedEmail);
+    }
+
+}

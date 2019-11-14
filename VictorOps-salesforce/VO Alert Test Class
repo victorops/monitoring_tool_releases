@@ -1,0 +1,10 @@
+@isTest
+private class voAlert_TEST{
+    static testMethod void  postRequest_test(){
+     VictorOpsTimeLine.isApexTest=true;
+        boolean isDone=false;
+        VictorOpsTimeLine.caseToVictor(false,'casenumber','test subject','test name','test company', 'test desc', 'test reason', 'test email');
+        isDone=true;
+        System.assertEquals(True, isDone);
+    }
+}
