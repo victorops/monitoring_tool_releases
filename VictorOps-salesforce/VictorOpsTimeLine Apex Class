@@ -11,7 +11,7 @@ public class VictorOpsTimeLine{
  HttpRequest req = new HttpRequest();
  Http http = new Http();
          
- req.setEndpoint('http://alert.victorops.com/integrations/generic/20131114/alert/$YOUR_API_KEY_HERE/$ROUTING_KEY_HERE');
+ req.setEndpoint('https://alert.victorops.com/integrations/generic/20131114/alert/$YOUR_API_KEY_HERE/$ROUTING_KEY_HERE');
  req.setMethod('POST');
  Map<String, String> data = new Map<String, String>();
  data.put('message_type', ifRecover(isRecovery, recovery,critical));
