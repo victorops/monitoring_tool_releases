@@ -12,6 +12,13 @@ req.AddHeader('Content-Type: application/json');
 var fields = action_payload;
 //Zabbix.Log(1, "action payload written to fields");
 
+//set fields for use in VictorOps endpoint mapping
+if (fields.MONITOR_NAME) {
+fields.monitor_name = fields.MONITOR_NAME;
+fields.VO_ZABBIX_HOST = fields.MONITOR_NAME;
+delete fields.MONITOR_NAME;
+}
+
 fields.VO_ORGANIZATION_KEY = params.VO_ORGANIZATION_KEY;
 fields.VO_ORGANIZATION_ID = params.VO_ORGANIZATION_ID;
 fields.VO_ROUTING_KEY = params.VO_ROUTING_KEY;
