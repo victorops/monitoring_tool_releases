@@ -22,7 +22,7 @@ public class VictorOpsTimeLine{
  data.put('Subject', subject);
  data.put('Contact_Name ', name);
  data.put('Company_Name', company);
- data.put('Case_Desctiption', description);
+ data.put('Case_Description', description);
  data.put('Case_Reason', reason);
  data.put('Contact_Email', email);       
     
