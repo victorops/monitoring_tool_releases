@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>6.4</version>
+    <media_types>
+        <media_type>
+            <name>VictorOps</name>
+            <type>WEBHOOK</type>
+            <parameters>
+                <parameter>
+                    <name>ACTION_ID</name>
+                    <value>{ACTION.ID}</value>
+                </parameter>
+                <parameter>
+                    <name>ACTION_NAME</name>
+                    <value>{ACTION.NAME}</value>
+                </parameter>
+                <parameter>
+                    <name>DATE</name>
+                    <value>{DATE}</value>
+                </parameter>
+                <parameter>
+                    <name>EVENT_AGE</name>
+                    <value>{EVENT.AGE}</value>
+                </parameter>
+                <parameter>
+                    <name>EVENT_DATE</name>
+                    <value>{EVENT.DATE}</value>
+                </parameter>
+                <parameter>
+                    <name>EVENT_ID</name>
+                    <value>{EVENT.ID}</value>
+                </parameter>
+                <parameter>
+                    <name>EVENT_STATUS</name>
+                    <value>{EVENT.STATUS}</value>
+                </parameter>
+                <parameter>
+                    <name>EVENT_TIME</name>
+                    <value>{EVENT.TIME}</value>
+                </parameter>
+                <parameter>
+                    <name>EVENT_VALUE</name>
+                    <value>{EVENT.VALUE}</value>
+                </parameter>
+                <parameter>
+                    <name>HOST_CONN1</name>
+                    <value>{HOST.CONN1}</value>
+                </parameter>
+                <parameter>
+                    <name>HOST_DNS1</name>
+                    <value>{HOST.DNS1}</value>
+                </parameter>
+                <parameter>
+                    <name>HOST_HOST1</name>
+                    <value>{HOST.HOST1}</value>
+                </parameter>
+                <parameter>
+                    <name>HOST_IP1</name>
+                    <value>{HOST.IP1}</value>
+                </parameter>
+                <parameter>
+                    <name>HOST_NAME</name>
+                    <value>{HOST.NAME}</value>
+                </parameter>
+                <parameter>
+                    <name>HOST_NAME1</name>
+                    <value>{HOST.NAME1}</value>
+                </parameter>
+                <parameter>
+                    <name>HOST_PORT1</name>
+                    <value>{HOST.PORT1}</value>
+                </parameter>
+                <parameter>
+                    <name>ITEM_DESCRIPTION1</name>
+                    <value>{ITEM.DESCRIPTION1}</value>
+                </parameter>
+                <parameter>
+                    <name>ITEM_ID1</name>
+                    <value>{ITEM.ID1}</value>
+                </parameter>
+                <parameter>
+                    <name>ITEM_KEY1</name>
+                    <value>{ITEM.KEY1}</value>
+                </parameter>
+                <parameter>
+                    <name>ITEM_KEY_ORIG1</name>
+                    <value>{ITEM.KEY.ORIG1}</value>
+                </parameter>
+                <parameter>
+                    <name>ITEM_LASTVALUE1</name>
+                    <value>{ITEM.LASTVALUE1}</value>
+                </parameter>
+                <parameter>
+                    <name>ITEM_NAME1</name>
+                    <value>{ITEM.NAME1}</value>
+                </parameter>
+                <parameter>
+                    <name>ITEM_NAME_ORIG1</name>
+                    <value>{ITEM.NAME.ORIG1}</value>
+                </parameter>
+                <parameter>
+                    <name>ITEM_VALUE1</name>
+                    <value>{ITEM.VALUE1}</value>
+                </parameter>
+                <parameter>
+                    <name>PAYLOAD</name>
+                    <value>{ALERT.MESSAGE}</value>
+                </parameter>
+                <parameter>
+                    <name>TIME</name>
+                    <value>{TIME}</value>
+                </parameter>
+                <parameter>
+                    <name>TRIGGER_DESCRIPTION</name>
+                    <value>{TRIGGER.DESCRIPTION}</value>
+                </parameter>
+                <parameter>
+                    <name>TRIGGER_EXPRESSION</name>
+                    <value>{TRIGGER.EXPRESSION}</value>
+                </parameter>
+                <parameter>
+                    <name>TRIGGER_HOSTGROUP.NAME</name>
+                    <value>{TRIGGER.HOSTGROUP.NAME}</value>
+                </parameter>
+                <parameter>
+                    <name>TRIGGER_ID</name>
+                    <value>{TRIGGER.ID}</value>
+                </parameter>
+                <parameter>
+                    <name>TRIGGER_KEY</name>
+                    <value>{ITEM.KEY}</value>
+                </parameter>
+                <parameter>
+                    <name>TRIGGER_NAME</name>
+                    <value>{TRIGGER.NAME}</value>
+                </parameter>
+                <parameter>
+                    <name>TRIGGER_NAME_ORIG</name>
+                    <value>{TRIGGER.NAME.ORIG}</value>
+                </parameter>
+                <parameter>
+                    <name>TRIGGER_NSEVERITY</name>
+                    <value>{TRIGGER.NSEVERITY}</value>
+                </parameter>
+                <parameter>
+                    <name>TRIGGER_SEVERITY</name>
+                    <value>{TRIGGER.SEVERITY}</value>
+                </parameter>
+                <parameter>
+                    <name>TRIGGER_STATUS</name>
+                    <value>{TRIGGER.STATUS}</value>
+                </parameter>
+                <parameter>
+                    <name>TRIGGER_TEMPLATE_NAME</name>
+                    <value>{TRIGGER.TEMPLATE.NAME}</value>
+                </parameter>
+                <parameter>
+                    <name>TRIGGER_URL</name>
+                    <value>{TRIGGER.URL}</value>
+                </parameter>
+                <parameter>
+                    <name>TRIGGER_VALUE</name>
+                    <value>{TRIGGER.VALUE}</value>
+                </parameter>
+                <parameter>
+                    <name>VO_ORGANIZATION_ID</name>
+                    <value>votest-cameron</value>
+                </parameter>
+                <parameter>
+                    <name>VO_ORGANIZATION_KEY</name>
+                    <value>7f50196d-6d48-493e-aa28-e9db79abd7c2</value>
+                </parameter>
+                <parameter>
+                    <name>VO_ROUTING_KEY</name>
+                    <value>{ALERT.SENDTO}</value>
+                </parameter>
+                <parameter>
+                    <name>VO_STATE_MESSAGE</name>
+                    <value>{ALERT.SUBJECT}</value>
+                </parameter>
+            </parameters>
+            <script>//Get all the alert variables
+var params = JSON.parse(value);
+//Zabbix.Log(1, &quot;params created&quot;);
+var action_payload=params.PAYLOAD;
+//Zabbix.Log(1, &quot;payload created: &quot; + action_payload);
+
+//Build JSON payload
+var fields = JSON.parse(action_payload);
+//Zabbix.Log(1, &quot;FIELDS after PARSE: &quot;+fields);
+//set fields for use in VictorOps endpoint mapping
+if (fields.MONITOR_NAME) {
+  fields.monitor_name = fields.MONITOR_NAME;
+  fields.VO_ZABBIX_HOST = fields.MONITOR_NAME;
+  delete fields.MONITOR_NAME;
+}
+fields.VO_ORGANIZATION_KEY = params.VO_ORGANIZATION_KEY;
+fields.VO_ORGANIZATION_ID = params.VO_ORGANIZATION_ID;
+fields.VO_ROUTING_KEY = params.VO_ROUTING_KEY;
+fields.VO_ZABBIX_ALERT_TIME = Date.now();
+fields[&quot;ESC.HISTORY&quot;] = params.VO_STATE_MESSAGE;
+fields[&quot;TRIGGER.KEY&quot;]=params.ITEM_KEY;
+fields[&quot;TRIGGER.DESCRIPTION&quot;]=params.TRIGGER_DESCRIPTION;
+fields[&quot;TRIGGER.HOSTGROUP.NAME&quot;]=params.TRIGGER_HOSTGROUP_NAME;
+fields[&quot;TRIGGER.EXPRESSION&quot;]=params.TRIGGER_EXPRESSION;
+fields[&quot;TRIGGER.ID&quot;]=params.TRIGGER_ID;
+fields[&quot;TRIGGER.NAME&quot;]=params.TRIGGER_NAME;
+fields[&quot;TRIGGER.NAME.ORIG&quot;]=params.TRIGGER_NAME_ORIG;
+fields[&quot;TRIGGER.NSEVERITY&quot;]=params.TRIGGER_NSEVERITY;
+fields[&quot;TRIGGER.SEVERITY&quot;]=params.TRIGGER_SEVERITY;
+fields[&quot;TRIGGER.STATUS&quot;]=params.TRIGGER_STATUS;
+fields[&quot;TRIGGER.TEMPLATE.NAME&quot;]=params.TRIGGER_TEMPLATE_NAME;
+fields[&quot;TRIGGER.URL&quot;]=params.TRIGGER_URL;
+fields[&quot;TRIGGER.VALUE&quot;]=params.TRIGGER_VALUE;
+fields[&quot;DATE&quot;]=params.DATE;
+fields[&quot;EVENT.AGE&quot;]=params.EVENT_AGE;
+fields[&quot;EVENT.DATE&quot;]=params.EVENT_DATE;
+fields[&quot;EVENT.ID&quot;]=params.EVENT_ID;
+fields[&quot;EVENT.STATUS&quot;]=params.EVENT_STATUS;
+fields[&quot;EVENT.TIME&quot;]=params.EVENT_TIME;
+fields[&quot;EVENT.VALUE&quot;]=params.EVENT_VALUE;
+fields[&quot;HOST.CONN1&quot;]=params.HOST_CONN1;
+fields[&quot;HOST.DNS1&quot;]=params.HOST_DNS1;
+fields[&quot;HOST.HOST1&quot;]=params.HOST_HOST1;
+fields[&quot;HOST.IP1&quot;]=params.HOST_IP1;
+fields[&quot;HOST.NAME&quot;]=params.HOST_NAME;
+fields[&quot;HOST.NAME1&quot;]=params.HOST_NAME1;
+fields[&quot;HOST.PORT1&quot;]=params.HOST_PORT1;
+fields[&quot;TIME&quot;]=params.TIME;
+fields[&quot;ACTION.ID&quot;]=params.ACTION_ID;
+fields[&quot;ACTION.NAME&quot;]=params.ACTION_NAME;
+fields[&quot;ITEM.DESCRIPTION1&quot;]=params.ITEM_DESCRIPTION1;
+fields[&quot;ITEM.ID1&quot;]=params.ITEM_ID1;
+fields[&quot;ITEM.KEY1&quot;]=params.ITEM_KEY1;
+fields[&quot;ITEM.KEY.ORIG1&quot;]=params.ITEM_KEY_ORIG1;
+fields[&quot;ITEM.LASTVALUE1&quot;]=params.ITEM_LASTVALUE1;
+fields[&quot;ITEM.NAME1&quot;]=params.ITEM_NAME1;
+fields[&quot;ITEM.NAME.ORIG1&quot;]=params.ITEM_NAME_ORIG1;
+fields[&quot;ITEM.VALUE1&quot;]=params.ITEM_VALUE1;
+
+
+//Declare curl request
+var req = new HttpRequest();
+req.addHeader('Content-Type: application/json');
+//Make the POST to the VO Zabbix Endpoint
+//https://alert.victorops.com/integrations/zabbix/20140212/alert
+var resp = req.post('https://alert.victorops.com/integrations/zabbix/20140212/alert',
+JSON.stringify(fields));
+
+if (req.getStatus() != 200) {
+throw 'Response code: '+req.getStatus();
+}return resp;</script>
+            <description>This media type is meant to send alerts from Zabbix 5.4-6.x to VictorOps. Fill in the fields VO_ORGANIZATION_ID and VO_ORGANIZATION_KEY with their required VictorOps values. To complete the configuration an appropriate user and action configuration is required. For complete instructions on the VictorOps Zabbix integration refer to https://help.victorops.com/knowledge-base/victorops-zabbix-integration/</description>
+            <message_templates>
+                <message_template>
+                    <event_source>TRIGGERS</event_source>
+                    <operation_mode>PROBLEM</operation_mode>
+                    <subject>Incident: {ESC.HISTORY}</subject>
+                    <message>{}</message>
+                </message_template>
+                <message_template>
+                    <event_source>TRIGGERS</event_source>
+                    <operation_mode>RECOVERY</operation_mode>
+                    <subject>Resolved: {ESC.HISTORY}</subject>
+                    <message>{
+&quot;EVENT.RECOVERY.DATE&quot;:&quot;{EVENT.RECOVERY.DATE}&quot;,
+&quot;EVENT.RECOVERY.ID&quot;:&quot;{EVENT.RECOVERY.ID}&quot;,
+&quot;EVENT.RECOVERY.STATUS&quot;:&quot;{EVENT.RECOVERY.STATUS}&quot;,
+&quot;EVENT.RECOVERY.TIME&quot;:&quot;{EVENT.RECOVERY.TIME}&quot;,
+&quot;EVENT.RECOVERY.VALUE&quot;:&quot;{EVENT.RECOVERY.VALUE}&quot;
+}</message>
+                </message_template>
+            </message_templates>
+        </media_type>
+    </media_types>
+</zabbix_export>
