@@ -164,11 +164,11 @@
                 </parameter>
                 <parameter>
                     <name>VO_ORGANIZATION_ID</name>
-                    <value>votest-cameron</value>
+                    <value></value>
                 </parameter>
                 <parameter>
                     <name>VO_ORGANIZATION_KEY</name>
-                    <value>7f50196d-6d48-493e-aa28-e9db79abd7c2</value>
+                    <value></value>
                 </parameter>
                 <parameter>
                     <name>VO_ROUTING_KEY</name>
